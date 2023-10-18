@@ -1,4 +1,10 @@
 import React, { useState, useEffect } from 'react';
+import { parse as parseTime } from 'tinyduration';
+
+// CAN REMOVE - tinyduration test
+// const timeToParse = 'PT5M7S'
+// const parsedObj = parseTime(timeToParse)
+// console.log('checking parsed obj', parsedObj.minutes)
 
 const VideoDisplay = (props) => {
   const [videoState, setVideoState] = useState(['Videos component'])

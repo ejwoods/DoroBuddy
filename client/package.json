@@ -1,7 +1,6 @@
 {
   "name": "solo-project",
   "version": "1.0.0",
-  "proxy": "http://localhost:1234",
   "description": "",
   "main": "index.js",
   "scripts": {
@@ -11,9 +10,9 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "express": "^4.18.2",
     "react": "^18.2.0",
-    "react-dom": "^18.2.0"
+    "react-dom": "^18.2.0",
+    "tinyduration": "^3.3.0"
   },
   "devDependencies": {
     "@babel/core": "^7.23.2",

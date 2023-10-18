@@ -1,8 +1,10 @@
 const express = require('express');
+
+const ytapiController = require('../controllers/ytapiController')
 const router = express.Router();
 
 router.get('/', (req, res) => {
-  console.log('videos route reached');
+  console.log('videos GET route reached');
   return res.status(200).json([
     {
       title: 'Google',
@@ -13,6 +15,10 @@ router.get('/', (req, res) => {
       url: 'www.youtube.com'
     }
   ])
+});
+
+router.post('/submit', ytapiController.getPlaylist, (req, res) => {
+  res.status(200).send('Playlist received');
 });
 
 module.exports = router;
