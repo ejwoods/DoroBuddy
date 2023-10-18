@@ -11,14 +11,14 @@ router.get('/', (req, res) => {
       url: 'www.google.com'
     },
     {
-      title: "YouTube",
+      title: 'YouTube',
       url: 'www.youtube.com'
     }
   ])
 });
 
-router.post('/submit', ytapiController.getPlaylist, (req, res) => {
-  res.status(200).send('Playlist received');
+router.post('/submit', ytapiController.getPlaylist, ytapiController.getVideoDetails, (req, res) => {
+  res.status(200).send('Playlist data received');
 });
 
 module.exports = router;

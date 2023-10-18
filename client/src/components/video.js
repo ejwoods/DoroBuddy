@@ -7,7 +7,7 @@ import { parse as parseTime } from 'tinyduration';
 // console.log('checking parsed obj', parsedObj.minutes)
 
 const VideoDisplay = (props) => {
-  const [videoState, setVideoState] = useState(['Videos component'])
+  const [videoState, setVideoState] = useState(['Videos component initial state'])
 
   useEffect(() => {
     fetch('/api/videos')
