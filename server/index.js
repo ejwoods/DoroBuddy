@@ -26,7 +26,7 @@ app.use(favicon(path.join(__dirname, '../client/assets/tomato.ico')));
 
 // error handlers
 app.use('/', (req, res) => {
-  res.status(404).send('Requested resource not found')
+  res.status(404).send('DoroBuddy can\'t find that page')
 })
 
 app.use((err, req, res, next) => {

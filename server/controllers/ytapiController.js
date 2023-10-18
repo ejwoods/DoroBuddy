@@ -11,8 +11,9 @@ ytapiController.getPlaylist = (req, res, next) => {
   console.log('getPlaylist controller reached')
   // const { PlaylistId } = req.params;
   fetch(testUrl)  // may/may not need to specify GET method
+    .then((data) => data.json())
     .then((data) => {
-      console.log('data from API call', data)
+      console.log('data from API call - trying to grab one video id: ', data.items[0].snippet.resourceId.videoId)
       return next();
     })
     .catch((err) => {
@@ -21,6 +22,10 @@ ytapiController.getPlaylist = (req, res, next) => {
         message: 'Server ERROR: Check server logs for details'
       })
     })
+}
+
+ytapiController.getVideoDetails = (req, res, next) => {
+  
 }
 
 module.exports = ytapiController;
