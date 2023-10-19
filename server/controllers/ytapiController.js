@@ -22,6 +22,7 @@ ytapiController.getPlaylist = (req, res, next) => {
   })  // don't need to specify GET method but
     .then((data) => data.json())
     .then((data) => {
+      // console.log('data returned to gPl controller: ', data)
       console.log('playlist items arr length: ', data.items.length)
       let videoIdsArray = [];
       for (let i = 0; i < data.items.length; i++) {
@@ -33,7 +34,7 @@ ytapiController.getPlaylist = (req, res, next) => {
     })
     .catch((err) => {
       return next({
-        log: 'ytapiController.getPlaylist: ERROR',
+        log: 'ytapiController.getPlaylist: ERROR' + err.message,
         message: 'Server ERROR: Check server logs for details'
       })
     })

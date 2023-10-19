@@ -14,6 +14,12 @@ const path = require('path')
 
 
 app.use(express.json());
+/*
+Middleware that runs on every request because it's given no path arg. 
+express.json() 1) looks for req with content type header of application/json
+only cares about requests with that header.Parses into usable javascript and will be on req body.
+
+*/
 app.use('/api/videos', videos);
 
 app.get('/api', (req, res) => {
@@ -37,7 +43,7 @@ app.use((err, req, res, next) => {
  };
  const errorObj = Object.assign({}, defaultErr, err);
  console.log(errorObj.log);
- return res.status(errorObj.status).send(errorObj.message) 
+ return res.status(errorObj.status).json(errorObj.message) 
 });
 
 app.listen(1234);

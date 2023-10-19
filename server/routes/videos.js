@@ -17,8 +17,12 @@ router.get('/', (req, res) => {
   ])
 });
 
-router.post('/submit', ytapiController.getPlaylist, ytapiController.getVideoDetails, (req, res) => {
-  res.status(200).send('Playlist data received');
+router.post('/submit', (req, res, next) => {
+  console.log(req.body)
+  next()
+}, ytapiController.getPlaylist, ytapiController.getVideoDetails, (req, res) => {
+  console.log('returning from post route')
+  res.status(200).json(res.locals.videos);
 });
 
 module.exports = router;

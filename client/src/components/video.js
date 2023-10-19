@@ -9,30 +9,45 @@ import { parse as parseTime } from 'tinyduration';
 const VideoDisplay = (props) => {
   const [videoState, setVideoState] = useState(['Videos component initial state'])
 
+
   useEffect(() => {
-    fetch('/api/videos')
-      .then(data => {
-        console.log('data', data)
-        return data.json()
-      })
+    fetch('/api/videos/submit', {
+      method: 'POST', // need to set correct content headers on this
+      body: JSON.stringify({
+        "playlistId": "PL77GLSNDp6v77qkYUzsUGv8-csaX-M3ui"
+      }),
+      headers: { 'content-type': 'application/json' }
+    })
+      .then(response => {
+        console.log('response in json..', response)
+        return response.json()
+      })  // parsing JSON string from response body into usuable JS
       .then(videos => {
+        console.log(typeof videos)
         console.log('videos: ', videos)
         const videoList = [];
         let videoId = 1;
         videos.map((video) => {
-          videoList.push(<Video 
-            videoName={video.title}
-            url={video.url}
-            key={'videoItem-' + videoId++}
-          />)
+          const dur = parseTime(video.Duration)
+          console.log('curr vid dur', dur)
+          if (dur.minutes < 5) {
+              videoList.push(<Video 
+                videoName={video.Name}
+                url={'https://www.youtube.com/watch?v=' + video.Id}
+                duration={`${dur.minutes} minutes ${dur.seconds} seconds`}
+                key={'videoItem-' + videoId++}
+                />)
+          }
         });
+        console.log('video list: ',  videoList)
         setVideoState(videoList)
       })
+      .catch((err) => console.warn(err))
   }, []);
 
   return (
     <article>
-      <h3>Video Display:</h3>
+      <h3>Here are your videos:</h3>
       <ul>
         {videoState}
       </ul>
@@ -40,11 +55,12 @@ const VideoDisplay = (props) => {
   )
 }
 
-const Video = ({ videoName, url }) => {
+const Video = ({ videoName, url, duration }) => {
   return (
     <li>
-      <section>{videoName}</section>
-      <section>{url}</section>
+      <a href={url}>{videoName}</a>
+      {/* <a>{url}</a> */}
+      <section>{duration}</section>
     </li>
   )
 }
