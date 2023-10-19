@@ -16,7 +16,7 @@ const path = require('path')
 app.use(express.json());
 /*
 Middleware that runs on every request because it's given no path arg. 
-express.json() 1) looks for req with content type header of application/json
+express.json() looks for req with content type header of application/json
 only cares about requests with that header.Parses into usable javascript and will be on req body.
 
 */

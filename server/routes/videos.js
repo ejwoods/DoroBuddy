@@ -18,7 +18,7 @@ router.get('/', (req, res) => {
 });
 
 router.post('/submit', (req, res, next) => {
-  console.log(req.body)
+  console.log('checking req entering post route', req.body)
   next()
 }, ytapiController.getPlaylist, ytapiController.getVideoDetails, (req, res) => {
   console.log('returning from post route')
