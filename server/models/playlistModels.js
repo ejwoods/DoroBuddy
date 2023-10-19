@@ -7,7 +7,7 @@ const MONGO_URI = `mongodb+srv://${process.env.DbUsername}:${process.env.DbPass}
 
 const playlistSchema = new Schema({
   playlistName: {type: String, required: true},
-  videoIds: {type: Array, required: true}
+  videoIds: {type: Array, required: true, unique: true}
 });
 
-module.exports = mongoose.model('playlist', playlistSchema)
+module.exports = mongoose.model('playlist', playlistSchema);

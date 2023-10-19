@@ -29,7 +29,12 @@ router.get('/', (req, res) => {
 router.post('/submit', (req, res, next) => {
   console.log('checking req entering post route', req.body)
   next()
-}, ytapiController.getPlaylist, ytapiController.getVideoDetails, (req, res) => {
+}, 
+ytapiController.getPlaylist, 
+ytapiController.getPlaylistDetails, 
+ytapiController.getVideoDetails, 
+mongoController.createPlaylist,
+(req, res) => {
   console.log('returning from post route')
   res.status(200).json(res.locals.videos);
 });
