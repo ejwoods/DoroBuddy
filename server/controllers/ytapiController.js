@@ -16,7 +16,7 @@ ytapiController.getPlaylist = (req, res, next) => {
   console.log('gPl req body: ', req.body)
   const { playlistId } = req.body;
   console.log('pl id: ', playlistId)
-  const url = plUrlSansId + playlistId + '&key=' + APIKEY
+  const url = plUrlSansId + playlistId + '&maxResults=50' + '&key=' + APIKEY
   fetch(url, {
     method: "GET"
   })  // don't need to specify GET method but
