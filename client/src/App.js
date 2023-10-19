@@ -6,7 +6,6 @@ const App = () => {
   return (
     <div>
       <h1>DoroBuddy online</h1>
-      {/* <InputSection /> */}
       <VideoDisplay />
     </div>
   )
