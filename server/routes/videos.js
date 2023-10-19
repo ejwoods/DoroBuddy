@@ -1,7 +1,16 @@
 const express = require('express');
+const mongoose = require('mongoose');
+require('dotenv').config();
 
 const ytapiController = require('../controllers/ytapiController')
+const mongoController = require('../controllers/mongoController')
 const router = express.Router();
+const MONGO_URI = `mongodb+srv://${process.env.DbUsername}:${process.env.DbPass}@cluster0.9xvtxtr.mongodb.net/?retryWrites=true&w=majority`
+
+mongoose.connect(MONGO_URI);
+mongoose.connection.once('open', () => {
+  console.log('Connected to Database');
+});
 
 router.get('/', (req, res) => {
   console.log('videos GET route reached');

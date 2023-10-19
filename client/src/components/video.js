@@ -69,7 +69,7 @@ const VideoDisplay = (props) => {
             Enter your playlist link or id: <input name='textinput' type='text' id='plInput'/>
           </label>
           <button type='submit'>Submit</button><br/>
-          <label htmlFor='minuteRange'> 
+          <label htmlFor='minuteRange' id='minuteRangeLabel'> 
             This doesn't do anything! <input type='range' min='1' max='15' id='minuteRange'/>
           </label>
           
