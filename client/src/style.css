@@ -4,4 +4,14 @@ body {
 
 #submitButton {
   margin-left: 5px
+
+  display: flex;
+}
+
+#minuteRange {
+  margin-top: 10px
+}
+
+#minuteRangeLabel {
+  margin-top: 500px
 }
