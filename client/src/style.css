@@ -1,3 +1,7 @@
 body {
   background-color: lightblue;
 }
+
+#submitButton {
+  margin-left: 5px
+}
