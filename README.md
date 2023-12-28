@@ -15,6 +15,16 @@ Give DoroBuddy a link to a public YouTube playlist and receive a list of videos 
 - Parse different media with DoroBuddy like medium articles
 - ...and more
 
+# Developed using
+
+![HTML](https://img.shields.io/badge/HTML-orange?style=for-the-badge&logo=html5&logoColor=white)
+![CSS](https://img.shields.io/badge/CSS-blue?style=for-the-badge&logo=css3)
+![JavaScript](https://img.shields.io/badge/JavaScript-gray?style=for-the-badge&logo=javascript)
+![Webpack](https://img.shields.io/badge/webpack-%238DD6F9.svg?style=for-the-badge&logo=webpack&logoColor=black)
+![React](https://img.shields.io/badge/React-blue?style=for-the-badge&logo=reac&logoColor=white)
+![Express](https://img.shields.io/badge/express-beige?style=for-the-badge&logo=express&logoColor=black)
+![NodeJS](https://img.shields.io/badge/NodeJS-darkblue?style=for-the-badge&logo=nodedotjs&logoColor=#339933)
+
 ## Made by
 
 Jordan Woods [Github](https://github.com/ejwoods) | [LinkedIn](https://www.linkedin.com/in/jordanwoods277/)
